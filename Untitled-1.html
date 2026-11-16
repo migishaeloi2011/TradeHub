@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HH Logo Recreation</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #ffffff; /* Clean solid white background */
+        }
+        .logo-container {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="logo-container">
+        <svg xmlns="http://w3.org" viewBox="0 0 800 700" width="100%" height="100%">
+            <defs>
+                <!-- Gradient for the "H H" letters (Black fading to gold/tan at the bottom) -->
+                <linearGradient id="letterGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#000000" />
+                    <stop offset="75%" stop-color="#111111" />
+                    <stop offset="90%" stop-color="#bda07a" />
+                    <stop offset="100%" stop-color="#e9dfcc" />
+                </linearGradient>
+                
+                <!-- Drop shadow effect for the "H H" letters -->
+                <filter id="dropShadow" x="-10%" y="-10%" width="130%" height="130%">
+                    <feDropShadow dx="5" dy="15" stdDeviation="8" flood-color="#000000" flood-opacity="0.25"/>
+                </filter>
+            </defs>
+
+            <!-- 1. THE ROOF & CHIMNEY (Yellow/Gold) -->
+            <path d="M 180,260 
+                     L 470,130 
+                     L 570,146 
+                     L 570,150 
+                     L 650,150 
+                     L 650,225 
+                     L 750,265 
+                     L 715,265 
+                     L 570,198 
+                     L 470,155 
+                     L 220,260 
+                     Z" 
+                  fill="#f2c84b" />
+
+            <!-- 2. THE LEFT "H" (Italicized with Serifs) -->
+            <g filter="url(#dropShadow)">
+                <text x="110" y="470" 
+                      font-family="'Georgia', 'Times New Roman', serif" 
+                      font-size="340" 
+                      font-weight="bold" 
+                      font-style="italic" 
+                      fill="url(#letterGradient)">H</text>
+            </g>
+
+            <!-- 3. THE RIGHT "H" (Italicized with Serifs) -->
+            <g filter="url(#dropShadow)">
+                <text x="450" y="470" 
+                      font-family="'Georgia', 'Times New Roman', serif" 
+                      font-size="340" 
+                      font-weight="bold" 
+                      font-style="italic" 
+                      fill="url(#letterGradient)">H</text>
+            </g>
+
+            <!-- 4. THE BEAR ICON (Center Element) -->
+            <g transform="translate(415, 160)">
+                <!-- Antenna/Spire point -->
+                <path d="M 0,0 L -8,60 L 8,60 Z" fill="#000000" />
+                
+                <!-- Bear Head -->
+                <circle cx="0" cy="85" r="28" fill="#000000" />
+                
+                <!-- Left Ear -->
+                <circle cx="-24" cy="68" r="10" fill="#000000" />
+                <!-- Right Ear -->
+                <circle cx="24" cy="68" r="10" fill="#000000" />
+                
+                <!-- Center Eye Graphic (White outer, black inner) -->
+                <circle cx="0" cy="85" r="10" fill="#ffffff" />
+                <circle cx="0" cy="85" r="5" fill="#000000" />
+                
+                <!-- Bear Body -->
+                <circle cx="0" cy="130" r="30" fill="#000000" />
+                
+                <!-- Left Arm/Paw -->
+                <circle cx="-28" cy="115" r="10" fill="#000000" />
+                <!-- Right Arm/Paw -->
+                <circle cx="24" cy="115" r="10" fill="#000000" />
+                
+                <!-- Left Foot -->
+                <circle cx="-18" cy="155" r="12" fill="#000000" />
+                <!-- Right Foot -->
+                <circle cx="18" cy="155" r="12" fill="#000000" />
+                
+                <!-- Small white highlight accents on the feet -->
+                <circle cx="-18" cy="155" r="6" fill="#ffffff" opacity="0.15"/>
+                <circle cx="18" cy="155" r="6" fill="#ffffff" opacity="0.15"/>
+            </g>
+        </svg>
+    </div>
+
+</body>
+</html>
